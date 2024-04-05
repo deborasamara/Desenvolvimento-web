@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-ud4qj+-2^r((ku1v$22zo1(-4vi5$3!n65za1ae-#r-65*=nog
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['deborasamara.pythonanywhere.com']
+ALLOWED_HOSTS = ['deborasamara.pythonanywhere.com', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'enquetes.apps.EnquetesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
