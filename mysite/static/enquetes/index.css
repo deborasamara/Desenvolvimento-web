@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+body{
+}
+
+main{
+    margin-left: 55px;
+    margin-right: 55px;
+}
+#cabecalho-enquetes{
+    background-color: #3E5BB2;
+    padding: 20px;
+}
+#titulo-template{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #8601B0;
+}
+#linha-decorativa{
+    border: 0;
+    margin: 15px 0;
+    width: 80%;
+    height: 1px;
+    background: #8601B0;
+}
+ul{
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+ul li a{
+    text-decoration: none;
+}
+ul li{
+    max-width: 400px;
+}
+ul a{
+    text-decoration: none;
+}
+#card-enquete{
+
+    border-radius: 8px;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+button{
+    border: 1px solid #FC9902;
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom:10px;
+}
+button:hover{
+    border: 1px solid black;
+    background-color: #FC9902;
+    color: white;
+}
+button a{
+    text-decoration: none;
+}

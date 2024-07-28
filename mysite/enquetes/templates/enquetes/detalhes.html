@@ -1,17 +1,41 @@
+{% load static %}
 <html>
     <head>
         <title>App Enquetes</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'enquetes/forms.css'%}">
     </head>
     <body>
-        <h1>Aplicação de enquetes - Dsweb 2024.1</h1>
-        <h2>Enquete #{{enquete.id}}</h2>
-        <h2>{{enquete.texto}}</h2>
-        <p><i>{{enquete.data_pub}}</i></p>
-        <p>Selecione a alternativa desejada:</p>
-        <ul>
-        {% for alt in enquete.alternativa_set.all%}
-            <li>{{alt.texto}}</li>
-        {% endfor %}
-        </ul>
+        <header id="cabecalho-enquetes">
+            <img src="{% static 'enquetes/img/logo.png'%}" alt="Logo">
+        </header>
+        <main>
+            <h1 id="titulo-detalhes">Aplicação de enquetes - Dsweb 2024.1</h1>
+            <p>Enquete #{{enquete.id}}</p>
+            <div id="caixa-formulario">
+                <p>{{enquete.texto}}</p>
+                <p class="input-espacamentos"><i>{{enquete.data_pub}}</i></p>
+                {% if error %}
+                    <dt><b>Erro: {{error}}</b></dt>
+                {% endif %}
+                <p class="input-espacamentos">Selecione a alternativa desejada:</p>
+                <form action="{% url 'enquetes:detalhes' enquete.id %}" method="post">
+                    {% csrf_token %}
+                    <ul class="input-espacamentos">
+                    {% for alt in enquete.alternativa_set.all%}
+                        <li class="input-espacamentos">
+                            <input type="radio" name="escolha" value="{{ alt.id }}" id="alt{{forloop.counter}}"/>
+                            <label for="alt{{forloop.counter}}">
+                                {{alt.texto}}
+                            </label>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    <input id="detalhes-submit" type="submit" value="Registre seu voto"/>
+                </form>
+            </div>
+            <button>
+                <a href="{% url 'enquetes:index' %}">Voltar</a>
+            </button>
+        </main>
     </body>
 </html>

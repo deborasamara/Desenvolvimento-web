@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+    <head>
+        <title>App Enquetes</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'enquetes/resultado.css'%}">
+    </head>
+    <body>
+        <header id="cabecalho-resultado">
+            <img src="{% static 'enquetes/img/logo.png'%}" alt="Logo">
+        </header>
+        <main>
+            <h1 id="titulo-resultado">Aplicação de enquetes - Dsweb 2024.1</h1>
+            <p>Parcial da Enquete #{{enquete.id}}</p>
+            <h2>{{enquete.texto}}</h2
+            <p><i>{{enquete.data_pub}}</i></p>
+            <p>Quantidade de votos por alternativas</p>
+            <!--<ul>-->
+                <div id="resultado-votacao-content">
+                    <table>
+                        <thead id="titulo-tabela">
+                            <tr>
+                                <th>Alternativa</th>
+                                <th>Quantidade de Votos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for alt in enquete.alternativa_set.all%}
+                            <tr>
+                                <td>{{alt.texto}}</td>
+                                <td>{{ alt.quant_votos }} voto{{ alt.quant_votos | pluralize }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+            <!--</ul>-->
+            <button id="votar-novamente">
+                <a href="{% url 'enquetes:detalhes' enquete.id %}">Votar novamente?</a>
+            </button>
+            <button id="voltar">
+                <a href="{% url 'enquetes:index' %}">Voltar</a>
+            </button>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

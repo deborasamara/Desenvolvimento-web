@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+main{
+    margin-left: 55px;
+    margin-right: 55px;
+}
+#titulo-detalhes{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #8601B0;
+}
+#cabecalho-enquetes{
+    background-color: #3E5BB2;
+    padding: 20px;
+}
+#caixa-formulario{
+    border: 1px solid #0A45F7;
+    border-radius: 15px;
+    width: 40%;
+    margin: 0 auto;
+    padding-top:20px;
+    padding-left: 35px;
+    padding-right: 20px;
+}
+ul{
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+.input-espacamentos{
+    margin-top: 10px;
+}
+#detalhes-submit{
+    border: 1px solid #A042BD;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+#detalhes-submit:hover{
+    background-color: #A042BD;
+}
+button{
+    border: 1px solid #FC9902;
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+button:hover{
+    border: 1px solid black;
+    background-color: #FC9902;
+    color: white;
+}
+button a{
+    text-decoration: none;
+}

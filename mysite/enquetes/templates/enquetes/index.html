@@ -1,23 +1,45 @@
+{% load static %}
 <html>
     <head>
         <title>App Enquetes</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'enquetes/index.css'%}">
     </head>
     <body>
-        <h1>Aplicação de Enquetes - DSWeb 2024.1</h1>
-        {% if lista_enquetes%}
-        <h3>Lista das Enquetes Castradas: </h3>
-            <ul>
-                {%for p in lista_enquetes %}
-                    <li>
-                        <a href="/enquetes/{{p.id}}/">
-                            {{p.texto}}
-                        </a>
-                    </li>
-                {%endfor %}
-            </ul>
-        {% else %}
-            <h3>Nenhuma enquete cadastrada até o momento</h3>
-        {%endif%}
+        <header id="cabecalho-enquetes">
+            <img src="{% static 'enquetes/img/logo.png'%}" alt="Logo">
+        </header>
+        <main>
+             <h1 id="titulo-template">Aplicação de Enquetes - DSWeb 2024.1</h1>
+            {% if lista_enquetes%}
+            <p>Escolha sua enquete para responder!: </p>
+            <div id="linha-decorativa"></div>
+                <ul id="card-container">
+                    {%for p in lista_enquetes %}
+                    <div id="card-enquete">
+                        <div>
+                            <li>
+                            <a href="{% url 'enquetes:detalhes' p.id %}">
+                                {{p.texto}}
+                            </a>&nbsp;
+                            </li>
+                            (<a href="{% url 'enquetes:resultado' p.id %}">
+                                    ver parcial
+                            </a>)
+                        </div>
+                    </div>
+                    {%endfor %}
+                </ul>
+            {% else %}
+                <h3>Nenhuma enquete cadastrada até o momento</h3>
+            {%endif%}
+            <br>
+            <button>
+                <a href="{% url 'raiz:index' %}">Voltar</a>
+            </button>
+        </main>
+        <footer>
+
+        </footer>
 
     </body>
 </html>

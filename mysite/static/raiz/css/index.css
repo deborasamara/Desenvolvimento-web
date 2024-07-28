@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+header{
+    padding: 20px;
+    background-color: #3E5BB2;
+    color: white;
+}
+main{
+    margin-left: 55px;
+    margin-right: 55px;
+}
+#titulo-index-raiz{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#linha-decorativa{
+    border: 0;
+    margin: 20px 0;
+    width: 80%;
+    height: 1px;
+    background: #414141;
+}
+ol{
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+#card-index-1{
+    padding: 10px;
+    display: flex;
+    margin-bottom: 20px;
+}
+#card-index-1 p{
+    max-width: 400px;
+}
+#card-content{
+    margin-left: 10px;
+}
+
+
+

@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+    <head>
+        <title>Disciplina DSWeb2024.1</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'raiz/css/index.css'%}">
+    </head>
+    <body>
+        <header id="cabecalho-index">
+            <p>Atividades - Débora Samara dos Santos Rodrigues - DSWEB</p>
+        </header>
+        <main>
+            <h1 id="titulo-index-raiz">Disciplina DSWeb 2024.1</h1>
+            <h3>Lista de Aplicações Criadas:</h3>
+            <p>Escolha uma e teste as funcionalidades!</p>
+            <div id="linha-decorativa"></div>
+            <ol>
+                <div id="card-index-1">
+                    <img src="{% static 'raiz/img/questionario.png' %}" alt="Imagem Descritiva"style="width:120px">
+                    <div id="card-content"style="margin-left: 10px;">
+                        <li><a href="/enquetes/">
+                        Aplicação de Enquetes
+                        </a></li>
+                        <p>Aplicação feita durante as aulas de desenvolvimento web, criando uma sistema de enquetes para aprender a usar django.</p>
+                    </div>
+                </div>
+            </ol>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>
